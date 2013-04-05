@@ -4,7 +4,7 @@ class CreateItems < ActiveRecord::Migration
       t.integer :project_id
       t.string :title
       t.text :description
-      t.completed :integer
+      t.integer :completed
 
       t.timestamps
     end
