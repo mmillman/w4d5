@@ -1,0 +1,15 @@
+<%= form_for(@item) do |f| %>
+
+  <h1>Item Details</h1>
+
+  <h3>Title:</h3>
+  <p><%= @item.title %></p>
+
+  <h3>Description:</h3>
+  <p><%= @item.description %></p>
+
+  <%= link_to "<< Back to '#{Project.find(@item.project_id).title}'",
+      project_url(@item.project_id)
+  %>
+
+<% end %>

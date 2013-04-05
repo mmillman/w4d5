@@ -24,4 +24,8 @@ ActiveRecord::Base.transaction do
     :completed => "0"
   )
 
+  t1 = Team.create!(:name => "Team 1")
+  t2 = Team.create!(:name => "Team 2")
+  t3 = Team.create!(:name => "Team 3")
+
 end
