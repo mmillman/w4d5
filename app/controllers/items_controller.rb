@@ -16,8 +16,6 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-
-    redirect_to item_url(@item)
   end
 
   def destroy

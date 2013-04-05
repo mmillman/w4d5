@@ -16,8 +16,6 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-
-    redirect_to project_url(@project)
   end
 
   def destroy
