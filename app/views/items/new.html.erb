@@ -1,6 +1,18 @@
 <%= form_for(@item) do |f| %>
 
   <h1>New Item</h1>
+
+  <p>
+    <%= f.label "Choose the project this item belongs to:" %><br />
+    <%=
+      f.select(
+        :project_id,
+        [["None", nil]] +
+        Project.all.map { |project| [project.title, project.id] }
+      )
+    %>
+  </p>
+
   <p>
     <%= f.label "Item Title:" %><br />
     <%= f.text_field :title %>
