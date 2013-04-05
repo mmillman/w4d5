@@ -2,6 +2,14 @@
 
   <h1>New Project</h1>
   <p>
+    <%= f.label "Choose the team this project belongs to:" %><br />
+    <%=
+     f.select(
+       :team_id,
+       Team.all.map { |team| [team.name, team.id] }
+     )
+    %>
+  <p>
     <%= f.label "Project Title:" %><br />
     <%= f.text_field :title %>
   </p>

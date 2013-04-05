@@ -12,6 +12,7 @@
     <% end %>
   </ul>
 
-  <%= link_to "<< Projects List", projects_url %>
+  <% team = Team.find(@project.team_id) %>
+  <%= link_to "<< Back to team '#{team.name}'", team_url(team) %>
 
 <% end %>
