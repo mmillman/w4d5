@@ -1,0 +1,25 @@
+<%= form_for(@user) do |f| %>
+  <h1>New User</h1>
+
+  <%= f.label "Username:" %>
+  <%= f.text_field :name %>
+
+  <h3>Choose teams to join:</h3>
+    <% Team.all.each do |team| %>
+      <%=
+        check_box_tag(
+          "user[team_ids][]", #johnathan's example: user.team_ids =
+          team.id,
+          false,
+          :id => "user_team_ids_#{team.id}"
+        )
+      %>
+
+      <%= label_tag "user_team_ids_#{team.id}", team.name %>
+      <br>
+    <% end %>
+
+  <br>
+  <%= f.submit "Create user"%>
+
+<% end %>

@@ -1,0 +1,15 @@
+<h1>User "<%= @user.name %>"</h1>
+
+<p>User id: <%= @user.id %></p>
+
+
+<% user_teams = @user.teams %>
+
+<h3>Member of <%= user_teams.count %> team<%= user_teams.count == 1 ? "" : "s" %>:</h3>
+<ul>
+<% user_teams.each do |team| %>
+  <li><%= link_to team.name, team_url(team) %></li>
+<% end %>
+</ul>
+
+<%= link_to "<< Users page", users_url %>

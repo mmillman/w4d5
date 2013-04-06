@@ -6,4 +6,13 @@
 <% end %>
 </ul>
 
+<% members = @team.members %>
+
+<h3>Members (<%= members.count %>):</h3>
+<ul>
+  <% members.each do |member| %>
+  <li><%= link_to member.name, user_url(member) %></li>
+  <% end %>
+</ul>
+
 <%= link_to "<< Teams List", teams_url %>

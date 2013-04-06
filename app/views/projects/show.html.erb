@@ -1,18 +1,15 @@
-<%= form_for(@project) do |f| %>
+<h1><%= @project.title %></h1>
 
-  <h1><%= @project.title %></h1>
+<h3>Description:</h3>
+<p><%= @project.description %></p>
 
-  <h3>Description:</h3>
-    <%= @project.description %>
 
-  <h3>Items:</h3>
-  <ul>
-    <% @project.items.each do |item| %>
-    <li><%= link_to item.title, item_url(item)%></li>
-    <% end %>
-  </ul>
+<h3>Items:</h3>
+<ul>
+  <% @project.items.each do |item| %>
+  <li><%= link_to item.title, item_url(item)%></li>
+  <% end %>
+</ul>
 
-  <% team = Team.find(@project.team_id) %>
-  <%= link_to "<< Back to team '#{team.name}'", team_url(team) %>
-
-<% end %>
+<% team = Team.find(@project.team_id) %>
+<%= link_to "<< Back to team '#{team.name}'", team_url(team) %>

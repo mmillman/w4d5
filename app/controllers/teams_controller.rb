@@ -4,10 +4,13 @@ class TeamsController < ApplicationController
   end
 
   def create
-    @team = Team.new(params[:project])
-    @team.save
+    @team = Team.new(params[:team])
 
-    redirect_to project_url(@team)
+    if @team.save
+      redirect_to project_url(@team)
+    else
+      render :new
+    end
   end
 
   def new
